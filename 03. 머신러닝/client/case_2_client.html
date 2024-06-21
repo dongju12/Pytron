@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h2>영화리뷰 긍정/부정 판별기</h2>
+    <!--  post  -->
+    <form method="post" action="http://127.0.0.1:5000/case2">
+        리뷰 : <br>
+        <textarea name="review">
+어제 영화를 봤는데 너무 재미없어서 깜빡 잠들어버렸어. 이런 영화를 무슨 생각으로 만든걸까?
+        </textarea>
+        <input type=submit value="확인">
+    </form>
+</body>
+</html>

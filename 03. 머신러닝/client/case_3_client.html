@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+    <h2>영화리뷰 긍정/부정 판별기</h2>
+    <!--  post  -->
+    <form method="post">
+        리뷰 : <br>
+        <textarea name="review">
+어제 영화를 봤는데 너무 재미없어서 깜빡 잠들어버렸어. 이런 영화를 무슨 생각으로 만든걸까?
+        </textarea>
+        <input type="button" value="확인" onclick="predict()">
+    </form>
+
+    <script>
+        function predict(){
+            let tag = document.getElementsByName("review");
+            $.ajax({
+                url: "http://127.0.0.1:5000/case3",
+                method : "post",
+                data: {
+                    review: tag[0].innerHTML
+                },
+                success: function( response ) {
+                  alert(response["result"])
+                }
+              });
+
+        }
+    </script>
+</body>
+</html>
